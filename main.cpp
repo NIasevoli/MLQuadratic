@@ -18,10 +18,10 @@ int main()
       torch::nn::ReLU(),
       torch::nn::Linear(10, 1));
   torch::nn::MSELoss loss_func;
-  torch::optim::Adam optimizer(model->parameters(), torch::optim::AdamOptions(0.01));
+  torch::optim::Adam optimizer(model->parameters(), torch::optim::AdamOptions(0.005));
 
   torch::Tensor tempo_pred;
-  for (int epoch = 0; epoch < 3000; ++epoch) {
+  for (int epoch = 0; epoch < 6000; ++epoch) {
     optimizer.zero_grad();
     tempo_pred = model->forward(altezza);
     torch::Tensor loss = loss_func(tempo_pred, tempo);
