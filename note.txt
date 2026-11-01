@@ -1,3 +1,6 @@
 mkdir build && cd build
 cmake -DCMAKE_PREFIX_PATH=/percorso/a/libtorch ..
 cmake --build . --config Release
+
+To make cmake run from command line in macos
+PATH="/Applications/CMake.app/Contents/bin":"$PATH"
